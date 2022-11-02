@@ -56,4 +56,11 @@ while True:
         mydb.commit()
         print("Data deleted successfully..") 
     elif(choice==6):
-        break      
+        print("update the total amount of book for each book depending on the return date")  
+        sql="SELECT i.`userid`, i.`bookid`, i.`issuedate`, i.`returndate`, DATEDIFF(i.`returndate`,i.`issuedate`) AS DateDiff, DATEDIFF(i.`returndate`,i.`issuedate`) * b.chargeperday as amount FROM `bookissue` i JOIN books b ON i.bookid=b.id"
+        mycursor.execute(sql)
+        result = mycursor.fetchall()
+        for i in result:
+            print(i)   
+     
+
