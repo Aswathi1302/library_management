@@ -49,6 +49,11 @@ while True:
         mydb.commit()
         print("Data updated successfully....")
     elif(choice==5):
-        print("delete employe")  
+        print("delete book details")  
+        title=input("enter the book title:")
+        sql="DELETE FROM `books` WHERE `title`='"+title+"'"
+        mycursor.execute(sql)
+        mydb.commit()
+        print("Data deleted successfully..") 
     elif(choice==6):
         break      
