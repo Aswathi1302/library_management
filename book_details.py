@@ -1,3 +1,6 @@
+import mysql.connector
+mydb = mysql.connector.connect(host='localhost',user='root',password='',database='librarymanagementdb')
+mycursor=mydb.cursor()
 while True:
     print("select an option from the menu")
     print("1. add book:-")
