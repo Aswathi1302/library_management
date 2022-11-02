@@ -25,6 +25,11 @@ while True:
         print("insert successfully.......")
     elif(choice==2):
         print("view book")
+        sql="SELECT * FROM `books` "
+        mycursor.execute(sql)
+        result=mycursor.fetchall()
+        for i in result:
+            print(i)
     elif(choice==3):
         print("search a book")  
     elif(choice==4):
