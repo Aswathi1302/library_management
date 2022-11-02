@@ -8,7 +8,10 @@ while True:
     print("3.search book:-")
     print("4.upadte book:-")
     print("5. delete book:-")
-    print("6.exit")
+    print("6.update charge per day")
+    print("7.count of book in each catagory")
+    print("8. print book details using like")
+    print("9.exit")
 
     choice=int(input("enter your choice:-"))
     if(choice==1):
@@ -62,5 +65,22 @@ while True:
         result = mycursor.fetchall()
         for i in result:
             print(i)   
-     
+    elif(choice==7):
+        print("Display count of total book in each category") 
+        sql="SELECT COUNT(*),catagory FROM `books` GROUP BY catagory" 
+        mycursor.execute(sql)
+        result = mycursor.fetchall()
+        for i in result:
+            print(i)
+
+    elif(choice==8):
+        print("search a books by character") 
+        character=input("enter a character:-")
+        sql="SELECT `title`, `author`, `catagory`, `chargeperday`, `copies`  FROM `books` WHERE `title` LIKE '"+character+"%'"
+        mycursor.execute(sql)
+        result = mycursor.fetchall()
+        for i in result:
+            print(i)    
+    elif(choice==9):
+        break             
 
