@@ -13,6 +13,16 @@ while True:
     choice=int(input("enter your choice:-"))
     if(choice==1):
         print("add book:")
+        title=input("enter a book name:")
+        author=input("enter author name:-")
+        catagory=input("enter catagory:-")
+        chargeperday=input("enter chargeperday:-")
+        copies=input("enter copies:- ")
+        sql="INSERT INTO `books`(`title`, `author`, `catagory`, `chargeperday`, `copies`) VALUES (%s,%s,%s,%s,%s)"
+        data=(title,author,catagory,chargeperday,copies)
+        mycursor.execute(sql,data)
+        mydb.commit()
+        print("insert successfully.......")
     elif(choice==2):
         print("view book")
     elif(choice==3):
