@@ -10,7 +10,7 @@ while True:
     print("5. delete book:-")
     print("6.update charge per day")
     print("7.count of book in each catagory")
-    print("8. print book details using like")
+    print("8. print book details using like ")
     print("9.exit")
 
     choice=int(input("enter your choice:-"))
